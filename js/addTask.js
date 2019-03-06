@@ -1,5 +1,26 @@
 'use strict';
 
+if (window.NodeList && !NodeList.prototype.forEach) {
+    NodeList.prototype.forEach = function (callback, thisArg) {
+        thisArg = thisArg || window;
+        for (var i = 0; i < this.length; i++) {
+            callback.call(thisArg, this[i], i, this);
+        }
+    };
+};
+
+
+(function(ELEMENT) {
+    ELEMENT.matches = ELEMENT.matches || ELEMENT.mozMatchesSelector || ELEMENT.msMatchesSelector || ELEMENT.oMatchesSelector || ELEMENT.webkitMatchesSelector;
+    ELEMENT.closest = ELEMENT.closest || function closest(selector) {
+        if (!this) return null;
+        if (this.matches(selector)) return this;
+        if (!this.parentElement) {return null}
+        else return this.parentElement.closest(selector)
+      };
+}(Element.prototype));
+
+
 var toDo = document.querySelector('.to-do');
 var toDoAdd = document.querySelector('.to-do__button-add');
 var toDoEmpty = document.querySelector('.to-do__description-empty');
@@ -23,7 +44,7 @@ toDoTaskCreateCancel.addEventListener('click', function() {
 });
 
 toDoTaskCreateSave.addEventListener('click', function() {
-	addNewTusk(toDoTaskCreateInput);
+	addNewTask(toDoTaskCreateInput);
 });
 
 function toDoCreateSwitcher() {
@@ -32,7 +53,7 @@ function toDoCreateSwitcher() {
 };
 
 
-function addNewTusk(toDoTaskCreateInput) {
+function addNewTask(toDoTaskCreateInput) {
 	
 	// check string
 	if (checkString()) {
@@ -278,3 +299,4 @@ function deleteAll() {
 		localStorage.clear();
 		location.reload();
 }
+
