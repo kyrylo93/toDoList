@@ -1,0 +1,88 @@
+body {
+	margin: 0 auto;
+	width: 500px;
+	text-align: center;
+}
+
+
+.task-create {
+	padding: 0 120px;
+	display: flex;
+	flex-direction: column;
+}
+
+.to-do__ready-tasks {
+	height: 300px;
+	padding: 0 100px;
+
+}
+
+.task-create__input {
+	width: 100%;
+	border-radius: 10px;
+	height: 25px;
+	padding: 5px;
+	box-sizing: border-box;
+	margin-bottom: 20px;
+}
+
+.task-create__button-block {
+	display: flex;
+	justify-content: space-between;
+}
+
+.to-do__button-add,
+.task-create__cancel,
+.task-create__save {
+	border-radius: 6px;
+}
+
+.display-none {
+	display: none;
+}
+
+.task-description {
+	font-size: 20px;
+	line-height: 20px;
+	width: 100%;
+	word-wrap: break-word;
+}
+
+.task-item {
+	background-color: #e3e3e3;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	border-radius: 20px;
+	margin-top: 10px;
+}
+
+.task-checkbox {
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	top: 50%;
+	left: -50px;
+	margin-top: -12px;
+}
+
+.task-delete {
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	top: 50%;
+	right: -50px;
+	margin-top: -12px;
+
+	border: none;
+	background-color: #FF3333;
+	border-radius: 50%;
+
+	font: 32px;
+	font-weight: 700;
+	color: #fff;
+}
+
+.finished {
+	background-color: #8F8F8F;
+}

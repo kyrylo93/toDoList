@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta 
+		name="viewport"
+		content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>Simple to do list</title>
+</head>
+</head>
+<body>
+	<section class="to-do">
+		<button class="DELETTTT">DELETE ALL TASKS</button>
+		<h1 class="to-do__title">Simple TODO Application</h1>
+		<button class="to-do__button-add">Add new task</button>
+		<p class="to-do__description-empty">TODO is empty</p>
+		<section class="to-do__ready-tasks">
+			
+		</section>
+	</section>
+
+		<section class="to-do__task-create task-create display-none">
+			<h1 class="task-create__title">Add task</h1>
+			<input class="task-create__input" type="text" name="todo-name">
+			<div class="task-create__button-block">
+				<button class="task-create__cancel">Cancel</button>
+				<button class="task-create__save">Save change</button>
+			</div>
+		</section>
+	<script src="js/addTask.js"></script>
+</body>
+</html>
